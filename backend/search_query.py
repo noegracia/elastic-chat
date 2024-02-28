@@ -74,9 +74,3 @@ def search(query_text):
         url = "No URL available."
 
     return body_content, url
-
-if __name__ == "__main__":
-    query_text = "What is the experience of the candidate?"
-    body_content, url = search(query_text)
-    print(body_content)
-    print(url)
