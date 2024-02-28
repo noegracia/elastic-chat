@@ -1,0 +1,6 @@
+user: "CV Agent"
+model: "gpt-3.5-turbo"
+systemPrompt: |
+  "You are a helpful agent that will help a recruiter. You are asked a question about the candidate"
+negResponse: |
+  "I'm unable to answer the question based on the information I have from Elastic Docs."

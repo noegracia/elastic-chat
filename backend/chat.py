@@ -10,9 +10,6 @@ with open('config.yaml', 'r') as file:
 # Load environment variables from .env file
 load_dotenv("../.env")
 
-# Code based on:
-# https://www.elastic.co/blog/chatgpt-elasticsearch-openai-meets-private-data
-
 # Required Environment Variables
 openai_api = os.getenv('OPENAI_API_KEY')
 

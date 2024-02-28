@@ -5,14 +5,14 @@ from elasticsearch import Elasticsearch
 # Load environment variables from .env file
 load_dotenv("../.env")
 
-
-# Code based on:
-# https://www.elastic.co/blog/chatgpt-elasticsearch-openai-meets-private-data
-
 # Required Environment Variables
 cloud_id = os.getenv('ELASTIC_CLOUD_ID')
 cloud_user = os.getenv('ELASTIC_USERNAME')
 cloud_pass = os.getenv('ELASTIC_PASSWORD')
+
+# Code based on:
+# https://www.elastic.co/blog/chatgpt-elasticsearch-openai-meets-private-data
+
 
 # Connect to Elastic Cloud cluster
 def es_connect(cloud_id, user, passwd):
