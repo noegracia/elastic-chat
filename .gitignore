@@ -162,3 +162,6 @@ cython_debug/
 
 # Embedding Models
 create-embeddings/models
+
+# Ignore all .pdf files
+*.pdf
