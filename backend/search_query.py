@@ -37,13 +37,13 @@ def search(query_text):
                 }],
                 "filter": [{
                     "exists": {
-                        "field": "title-vector"
+                        "field": "ml.inference.body_content.predicted_value"
                     }
                 }]
             }
         },
         "knn": {
-            "field": "ml.inference.title.predicted_value",
+            "field": "ml.inference.body_content.predicted_value",
             "k": 1,
             "num_candidates": 20,
             "query_vector_builder": {
@@ -74,3 +74,9 @@ def search(query_text):
         url = "No URL available."
 
     return body_content, url
+
+if __name__ == "__main__":
+    query_text = "What is the experience of the candidate?"
+    body_content, url = search(query_text)
+    print(body_content)
+    print(url)
