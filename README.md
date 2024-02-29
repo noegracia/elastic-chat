@@ -41,7 +41,19 @@ elastic-chat/
 
 1. **Environment Setup**: Setup a conda environment by using en. Refer to the `environment.yml` file. (`load_embeddings_model.py` has a separated `environment.yml` because of incompatibilities with libraries but it don't cause incovenience in the deployment)
 
-2. **Configuration**: Fill in the `.env` file with your Elasticsearch cloud and GPT credentials.
+2. **Configuration**:
+   - Create a `.env` file in the root directory of the project.
+   - Populate the `.env` file with your Elasticsearch and OpenAI credentials as follows:
+
+     ```
+     ELASTIC_CLOUD_ID="your_elastic_cloud_id_here"
+     ELASTIC_USERNAME="your_elastic_username_here"
+     ELASTIC_PASSWORD="your_elastic_password_here"
+     ELASTIC_INDEX="your_elastic_index_here"
+     OPENAI_API_KEY="your_openai_api_key_here"
+     ```
+
+   - These credentials are essential for connecting to your Elasticsearch cluster and for using the GPT-3.5 API. Ensure you replace the placeholder values with your actual credentials.
 
 3. **Elasticsearch Model**: Before running the chat application, ensure you've loaded the dense vector model into Elasticsearch using `load_embeddings_model.py` for optimal search performance.
    - Create your deployment with a machine learning run instance and with an index with the name you entered in your .env
@@ -51,4 +63,4 @@ elastic-chat/
 5. **Running the Application**:
    - To index documents into Elasticsearch, use the `load_pdf_docs.py` script from the `create-embeddings` directory.
    - - example command: `python create-embeddings/load_pdf_docs.py --index_name <your_index_name> --pdf_path <path_to_your_pdf.pdf>`
-   - To start the chat GUI, run `run_web.py` from the `app` directory. This will open a web interface for interactive chatting. (Created simply with streamlit)
+   - To start the chat GUI, run `run_web.py` with the command `streamlit run run_web.py` from the `app` directory. This will open a web interface for interactive chatting. (Created simply with streamlit)
