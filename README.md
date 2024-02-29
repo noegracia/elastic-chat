@@ -63,4 +63,4 @@ elastic-chat/
 5. **Running the Application**:
    - To index documents into Elasticsearch, use the `load_pdf_docs.py` script from the `create-embeddings` directory.
    - - example command: `python create-embeddings/load_pdf_docs.py --index_name <your_index_name> --pdf_path <path_to_your_pdf.pdf>`
-   - To start the chat GUI, run `run_web.py` from the `app` directory. This will open a web interface for interactive chatting. (Created simply with streamlit)
+   - To start the chat GUI, run `run_web.py` with the command `streamlit run run_web.py` from the `app` directory. This will open a web interface for interactive chatting. (Created simply with streamlit)
