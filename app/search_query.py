@@ -66,6 +66,7 @@ def search(query_text):
     if resp['hits']['hits']:
         body_content = resp['hits']['hits'][0]['fields']['body_content'][0]
         url = resp['hits']['hits'][0]['fields']['url'][0]
+        print(resp)
     else:
         # Handle case where no results are found
         # body_content = "No relevant documents found."

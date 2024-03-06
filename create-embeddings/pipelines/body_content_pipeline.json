@@ -1,0 +1,51 @@
+{
+    "description": "A pipeline for inferring dense vectors from body_content",
+    "processors": [
+    {
+      "remove": {
+        "field": "ml.inference.body_content",
+        "ignore_missing": true
+      }
+    },
+    {
+      "inference": {
+        "field_map": {
+          "body_content": "text_field"
+        },
+        "model_id": "sentence-transformers__all-distilroberta-v1",
+        "on_failure": [
+          {
+            "append": {
+              "field": "_source._ingest.inference_errors",
+              "allow_duplicates": false,
+              "value": [
+                {
+                  "message": "Processor 'inference' in pipeline 'ml.inference.title-vector' failed for field 'body_content' with message '{{ _ingest.on_failure_message }}'",
+                  "pipeline": "ml.inference.title-vector",
+                  "timestamp": "{{{ _ingest.timestamp }}}"
+                }
+              ]
+            }
+          }
+        ],
+        "target_field": "ml.inference.body_content"
+      }
+    },
+    {
+      "append": {
+        "field": "_source._ingest.processors",
+        "value": [
+          {
+            "model_version": "12.0.0",
+            "pipeline": "ml.inference.title-vector",
+            "processed_timestamp": "{{{ _ingest.timestamp }}}",
+            "types": [
+              "pytorch",
+              "text_embedding"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
