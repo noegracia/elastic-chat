@@ -3,7 +3,7 @@ import chat
 import search_query as sq
 
 
-st.title("Elastic Chat Demo Visiativ")
+st.title("Elastic Chat LLM Demo")
 
 # Main chat form
 with st.form("chat_form"):

@@ -40,7 +40,7 @@ model_path, config, vocab_path = tm.save(tmp_path)
 
 # Load the model into Elasticsearch
 ptm = PyTorchModel(es, es_model_id)
-ptm.import_model(model_path=model_path, config_path=None, vocab_path=vocab_path, config=config) 
+ptm.import_model(model_path=model_path, config_path=None, vocab_path=vocab_path, config=config)
 
 
 # List the in elasticsearch
