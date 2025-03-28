@@ -1,6 +1,6 @@
 # Elastic Chat
 
-Elastic Chat is an chat application that integrates Elasticsearch with GPT-3.5 for efficient information retrieval and conversation.
+Elastic Chat is an chat application that integrates Elasticsearch with GPT for efficient information retrieval and conversation.
 
 ## Project Structure
 
